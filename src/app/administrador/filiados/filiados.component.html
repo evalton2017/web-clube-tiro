@@ -1,0 +1,70 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+
+  <mat-form-field class="example-form">
+    <mat-label>Pesquise o filiado</mat-label>
+    <input type="text" matInput fullWidth placeholder="Digite sua pesquisa" [(ngModel)]="pesquisa" (keyup)="pesquisar()">
+  </mat-form-field>
+
+    <table class="table table-hover" mat-table [dataSource]="dataSource"  matSort>
+        <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+        <tr mat-row  *matRowDef="let row; columns: colunas;"></tr>
+
+        <ng-container matColumnDef="id" class="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  [ngClass]="'id'">Codigo</th>
+            <td mat-cell *matCellDef="let filiado" [ngClass]="'id'">{{ filiado.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="nome" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'topo_nome'">
+                Nome
+            </th>
+            <td mat-cell *matCellDef="let filiado">
+                {{ filiado.pessoa.nome }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>
+            Email
+        </th>
+        <td mat-cell *matCellDef="let filiado">
+            {{ filiado.pessoa.email }}
+        </td>
+        </ng-container> 
+        
+        <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef [ngClass]="'cpf'">
+            cpf
+        </th>
+        <td mat-cell *matCellDef="let filiado" [ngClass]="'cpf'">
+            {{ filiado.pessoa.cpf |mask:"000.000.000-00" }}
+        </td>
+        </ng-container> 
+
+        <ng-container matColumnDef="ativo" >
+        <th mat-header-cell *matHeaderCellDef [ngClass]="'ativo'">
+            Ativo
+        </th>
+        <td mat-cell *matCellDef="let filiado" [ngClass]="'ativo'">
+        {{filiado.ativo ?'Sim' : 'Não'}}
+        </td>
+        </ng-container> 
+
+        <ng-container matColumnDef="opcoes">
+            <th mat-header-cell *matHeaderCellDef [ngClass]="'opcoes'">
+                Opções
+            </th>
+            <td mat-cell *matCellDef="let filiado" [ngClass]="'opcoes'">
+                <button mat-mini-fab style="background-color:green"><i  class="fas fa-user-edit" title="Editar"></i></button>
+                <button mat-mini-fab color="warn" mat-mini-fab style="margin-left: 2%;margin-right: 2%;" (click)="desativarDialog(filiado)" ><i  color="warn" class="fas fa-user-slash" title="Desativar"></i></button>
+                <button mat-mini-fab color="primary" (click)="ativarDialog(filiado)" ><i  color="warn" class="fas fa-user-minus" title="Ativar"></i></button>
+            </td>
+            </ng-container> 
+    </table>
+
+    <mat-paginator 
+        #paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[5,10,15,25]">
+    </mat-paginator>
+

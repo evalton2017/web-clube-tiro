@@ -1,0 +1,17 @@
+<ul class="list-group">
+    <li class="list-group-item active">Dados do Competidor</li>
+    <li class="list-group-item"><h4>Nome: {{dados.pessoa.nome}}</h4></li>
+    <li class="list-group-item"><h4>Email: {{dados.pessoa.email}}</h4></li>
+
+    <li class="list-group-item active">Endereço</li>
+    <li class="list-group-item"><h4>Endereço: {{dados.endereco.logradouro}} Casa: {{dados.endereco.numero}}</h4></li>
+    <li class="list-group-item"><h4>Cidade: {{dados.endereco.localidade}}-{{dados.endereco.uf}}</h4></li>
+    <li class="list-group-item"><h4>Bairro: {{dados.endereco.bairro}}</h4></li>
+
+    <li class="list-group-item active">Telefones</li>
+    <ng-container  *ngFor="let telefone of dados.telefones">
+    <li class="list-group-item">
+        ({{telefone.ddd}})-{{telefone.numero}}
+    </li>
+    </ng-container>
+  </ul>

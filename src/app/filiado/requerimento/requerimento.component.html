@@ -1,0 +1,85 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<div class="container">
+    <h2>Requerimento para aquisição de arma de fogo e acessório</h2>  
+    <p>(Colecionador,Atirador desportivo, caçador e entidades de tiro desportivo)</p>   
+    <br>
+    <h3><b>Nome completo/razão social: </b>{{filiado.pessoa?.nome}}</h3>
+    <h3><b class="pading">CPF: {{filiado.pessoa?.cpf}} </b><b class="cr">CR: {{filiado.cr}}</b> 
+        <b>Validade:</b>{{filiado.validadeCr | date:'dd/MM/yyyy'}} </h3>
+    <h3 *ngFor="let telefone of filiado.telefones">
+        <b>Telefone: </b>{{telefone.ddd}}-{{telefone?.numero}} 
+    </h3> <h3> <b>Email: </b> {{filiado.pessoa?.email}}</h3>
+  
+    <form [formGroup]="formRequerimento">
+            <hr>
+            <h3>OBJETIVO</h3>
+      
+            <section class="example-section">
+                <mat-checkbox class="example-margin" color="primary" formControlName="colecionamento" > Colecionador </mat-checkbox>  
+
+                <mat-checkbox class="example-margin" color="primary" formControlName="tiroDesp" >Tiro Desportivo </mat-checkbox>                    
+
+                <mat-checkbox class="example-margin" color="primary" formControlName="caca">Caça </mat-checkbox>                    
+        
+                <mat-checkbox class="example-margin" color="primary" formControlName="entDesp">Entidade Tiro Desportivo </mat-checkbox> 
+                <br>
+                <mat-checkbox class="example-margin" color="primary" formControlName="aquicaoAcessorio">Aquisição Acessório</mat-checkbox> 
+            </section>
+        
+            <hr>
+            <h3>ARMA DE FOGO/ACESSÓRIO</h3>
+                            
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Tipo</mat-label>
+                        <input matInput placeholder="tipo" name="tipo" formControlName="tipo">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Calibre</mat-label>
+                        <input matInput placeholder="calibre" name="calibre" formControlName="calibre">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Marca</mat-label>
+                        <input matInput placeholder="marca" name="marca" formControlName="marca">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-form">
+                        <mat-label>Modelo</mat-label>
+                        <input matInput placeholder="modelo" name="modelo" formControlName="modelo">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Quantidade</mat-label>
+                        <input matInput placeholder="quantidade" name="quantidade"  formControlName="quantidade">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-form">
+                        <mat-label>Dados técnicos</mat-label>
+                        <input matInput placeholder="dadosTec" name="dadosTec"  formControlName="dadosTec">
+                    </mat-form-field>
+
+                    
+                    <mat-form-field class="example-form">
+                        <mat-label>Fornecedor</mat-label>
+                        <input matInput placeholder="fornecedor" name="fornecedor"  formControlName="fornecedor">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>CNPJ</mat-label>
+                        <input matInput placeholder="cnpj" name="cnpj"  formControlName="cnpj" mascara="99.999.999/0001-00">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>CR</mat-label>
+                        <input matInput placeholder="crForn" name="crForn"  formControlName="crForn" mascara="999999">
+                    </mat-form-field>                         
+
+                <div>
+        
+            <button class="blue" (click)="solicitarRequerimento()" mat-button  [disabled]="formRequerimento.invalid"
+            >Solicitar Requerimento</button>
+        </div>                  
+    </form>
+
+</div>

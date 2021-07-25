@@ -1,0 +1,16 @@
+.id{
+    flex: 0 0 10%;
+ }
+
+ .opcoes{
+    flex: 0 0 15%;
+    text-align: left;
+ }
+
+ .cpf{
+    flex: 0 0 15%;
+ }
+
+ table {
+    width: 100%;
+  }

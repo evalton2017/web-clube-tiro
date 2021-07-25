@@ -1,0 +1,246 @@
+<ngx-loading [show]="loading"></ngx-loading>
+<app-navbar></app-navbar>
+      <div class="container">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+              </ol>
+
+              <div class="carousel-inner" style="height: 400px">
+                <div class="carousel-item active">
+                  <img class="first-slide" src="../../../assets/img/site/ctm_3.jpeg" alt="First slide">
+                  <div class="container">
+                    <div class="carousel-caption text-left">
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="second-slide" src="../../../assets/img/site/ctm_2.jpeg"alt="Second slide">
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="third-slide" src="../../../assets/img/site/ctm_1.jpeg" alt="Third slide">
+                  <div class="container">
+                    <div class="carousel-caption text-left">
+                      <h1></h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                      <img class="third-slide" src="../../../assets/img/site/ctm_5.jpeg" alt="Third slide">
+                      <div class="container">
+                          <div class="carousel-caption text-left">
+                              <h1></h1>
+                          </div>
+                      </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+
+          </div>
+
+          <div class="marketing" >
+              <div style="background:#E8E8E8">
+                <h4 class="bg-dark text-white text-left text-center">CTM- Clube da Mata </h4>
+
+                <div class="row" >
+
+                  <div class="col-md-4 img" >
+                    <img class="rounded-circle" src="../../../assets/img/site/logo.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>CTM</h2>
+                    <p>Localizado no Novo Gama, o clube de tiros é destinado para iniciantes na pratica esportiva, bem como para
+                        colecionadores e atiradores profissionais.</p>
+
+                  </div>
+                  <div class="col-md-4 img">
+                    <img class="rounded-circle" src="../../../assets/img/img_5.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Cursos</h2>
+                    <p>Para os iniciantes na prática de tiro esportivo, temos cursos com professores qualificados.</p>
+
+                  </div>
+                  <div class="col-md-4 img">
+                    <img class="rounded-circle" src="../../../assets/img/img_6.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Competições</h2>
+                    <p>Aprimore suas habilidades e participe de competições esportivas.</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <br>
+
+              <div>
+                <h4 class="text-white bg-dark text-center">CAMPEONATOS</h4>
+
+                <div style="background:#E8E8E8"> 
+                  <div class="row"  >
+                      <div class="col-md-4 img" *ngFor="let campeonato of campeonatos; let i=index" >
+                        <img class="rounded-circle" src="{{campeonato.url}}" alt="Generic placeholder image" width="140" height="140">
+                        <h2>{{campeonato.nome}}</h2>
+                        <p>Temporada {{campeonato.temporada}}</p>
+                        <p>Valor R$ {{campeonato.valor}}</p>
+              
+                        <button class="btn btn btn-primary btn-block" [routerLink]="['/login']" status="primary"  ><i class="fa fa-user" aria-hidden="true"></i>Inscrever</button>
+                      </div>  
+                    </div>
+                </div>
+
+              </div>
+              <br>
+            <div class="promo" style="background:#E8E8E8">
+                <h4 class="text-white bg-dark text-center">Conheça a pratica desportiva de tiros</h4>
+                <div class="row">
+                  <div class="col col-md-6 col-xs-12">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner ">
+                          <div class="carousel-item active">
+                            <img class="img-fluid" src="../../../assets/img/site/ctm_7.jpeg" alt="Primeiro Slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="img-fluid" src="../../../assets/img/site/ctm_8.jpeg" alt="Segundo Slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="img-fluid" src="../../../assets/img/site/ctm_9.jpeg" alt="Terceiro Slide">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+         
+                  <div class="col col-md-6  col-xs-12" >
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class=" card-img-top " src="../../../assets/img/index/st_3.jpg" alt="Primeiro Slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class=" card-img-top " src="../../../assets/img/index/img_3.jpg" alt="Segundo Slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="card-img-top " src="../../../assets/img/index/st_2.jpg" alt="Terceiro Slide">
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <hr>
+          </div>
+       
+          <br>
+          <div class="row featurette">
+              <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video width="320" height="240" controls>
+                      <source src="../../../assets/video/promo_1.mp4" type="video/mp4">
+                      <source src="../../../assets/video/promo_1.mp4" type="video/ogg">
+                    </video>
+                </div>
+              </div>
+              <br>
+              <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video width="320" height="240" controls>
+                      <source src="../../../assets/video/promo_2.mp4" type="video/mp4">
+                      <source src="../../../assets/video/promo_2.mp4" type="video/ogg">
+                    </video>
+                </div>
+              </div>
+            </div>
+
+          <hr>
+          <div style="background-image:url(../../../assets/img/logo_n.jpg)">
+                <h4 class="text-white bg-dark text-center">CURSOS</h4>
+                <div class="row" >
+
+          
+                </div>
+                <br>
+          </div>
+
+          <hr>
+          <div class="container">
+            <div class="row">
+              <div *ngFor="let image of albums_1; let i=index">
+                <div class="col-md4 " *ngIf="i<3">
+                  <img class="album" [src]="image.thumb" (click)="open(i)" height="300" width="370"/>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      <hr>
+      <div class="container">
+
+          <div class="container">
+            <div class="row">
+              <div *ngFor="let image of albums_1; let i=index">
+                <div class="col-md4 " *ngIf="i>3">
+                  <img class="album" [src]="image.thumb" (click)="open(i)" height="300" width="370"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+              <div class="col-md-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                      <video width="320" height="240" controls>
+                        <source src="../../../assets/video/al_3.mp4" type="video/mp4">
+                        <source src="{../../../assets/video/al_3.mp4" type="video/ogg">
+                      </video>
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video width="320" height="240" controls>
+                      <source src="../../../assets/video/al_2.mp4" type="video/mp4">
+                      <source src="../../../assets/video/al_2.mp4" type="video/ogg">
+                    </video>
+                </div>
+              </div>
+          </div>
+
+          <hr class="featurette-divider">
+      </div>
+
+      <div class="container">
+        <div class="row featurette">
+          <div class="col-md-6 order-md-2">
+            <h2 class="featurette-heading">Localização<span class="text-muted"></span></h2>
+            <p class="lead">Endereço:
+
+                    Quadra 14, Sn, Lote 21
+                    Alphavile Paiva, Novo Gama,
+                    GO, CEP 72863-529,
+                    <br/>
+                    Telefone
+
+                    (61) 998627-7750
+                    (61) 992396204</p>
+
+          </div>
+          <div class="col-md-6 order-md-1">
+            <a href="https://www.google.com.br/maps/dir/-16.0677923,-48.0644755/-16.0678144,-48.0644525/-16.0719298,-48.0556182/@-16.0735593,-48.0554562,2687m/data=!3m1!1e3!4m2!4m1!3e2?dcr=0">
+                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"src="../../../assets/img/local.jpg" alt="Generic placeholder image">
+            </a>
+          </div>
+        </div>
+      </div>

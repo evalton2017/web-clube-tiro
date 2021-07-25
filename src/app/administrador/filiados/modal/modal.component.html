@@ -1,0 +1,12 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<h1 mat-dialog-title>{{dados.titulo}}</h1>
+<div mat-dialog-content>
+  <p>Filiado {{dados.nome}}</p>
+    <mat-label>{{dados.email}}</mat-label>
+</div>
+<div mat-dialog-actions>
+    <button *ngIf="dados.acao==='ativar'" mat-button color="primary" (click)="ativar(dados.email)">Ativar</button>
+    <button *ngIf="dados.acao==='desativar'" mat-button color="warn" (click)="desativar(dados.email)">Desativar</button>
+    <button mat-button (click)="onNoClick()">Voltar</button>
+ 
+</div>

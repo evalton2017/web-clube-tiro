@@ -1,0 +1,122 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<div class="container">
+    <div id="contentToConvert">
+        <table width="75%" style="margin-left: 10%;margin-top: 5%; border=0">
+            <tbody>
+            <tr>
+                <th style="text-align:center;font-size: 20px;">REQUERIMENTO PARA AQUISIÇÃO DE ARMA DE FOGO E ACESSÓRIO</th>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-size: 15px;">(Colecionador,Atirador desportivo, caçador e entidades de tiro desportivo)</td>
+            </tr>           
+          
+            </tbody>
+        </table>
+        <th style="border:0" style="padding-left: 112px;padding-top: 15%; font-size: 20px;">1.REQUERENTE</th>
+        <table width="75%" style="margin-left: 10%;margin-top: 0%;border=0">
+            <tbody>
+                
+            <tr>
+                <th style=";font-size: 15px;">Nome completo/razão social: {{requerimento?.filiado?.pessoa?.nome | uppercase}}</th>
+            </tr>
+            <tr>
+                <td style="text-align:left; font-size: 15px;"><b class="pading">CPF: {{requerimento?.filiado?.pessoa?.cpf}} </b><b class="cr">CR: {{requerimento?.filiado?.cr}}</b>
+                    <b>Validade:</b> {{requerimento?.filiado.validadeCr | date:'dd/MM/yyyy'}} </td>
+                
+            </tr>  
+            <tr>
+                <th style=";font-size: 15px;">Representante legal: JOELSON BERTUNER DA MATA</th>
+            </tr>
+            <tr>
+                <td style="text-align:left; font-size: 15px;" *ngFor="let telefone of requerimento?.filiado?.telefones">
+                    <b>Telefone: </b>{{telefone.ddd}}-{{telefone?.numero}} <b>Email: </b> {{requerimento?.filiado?.pessoa?.email}}
+                </td>
+                
+            </tr>  
+
+            </tbody>
+        </table>
+
+        <th style="border:0" style="padding-left: 112px;padding-top: 4%; font-size: 20px;">2.OBJETIVO</th>
+        <table width="75%"  style="margin-left: 10%;margin-top: 0%;border=0">
+            <tbody>
+                
+            <tr>
+                <th style=";font-size: 15px;">Solicitação de autorização para aquisição de arma de fogo para: </th>
+            </tr>          
+            </tbody>
+        </table>
+        <table width="75%" style="margin-left: 10%;margin-top: 0%; border=0">
+            <tbody>
+            <tr>
+                <th style=";font-size: 15px;" *ngIf='requerimento?.colecionamento'>(x) Colecionamento</th>
+                <th style=";font-size: 15px;" *ngIf='requerimento?.tiroDesp'>(x) Tiro Desportivo</th>
+                <th style=";font-size: 15px;" *ngIf='requerimento?.caca'>(x) Caça</th>
+                <th style=";font-size: 15px;" *ngIf='requerimento?.entDesp'>(x) Entidade de tiro Desportivo</th>
+                <th style=";font-size: 15px;" *ngIf='requerimento?.aquicaoAcessorio'>(x) Aquisição de acessório de arma de fogo para tiro desportivo/entidade
+                <th style=";font-size: 15px;" *ngIf='!requerimento?.colecionamento'> ( ) Colecionamento</th>
+                <th style=";font-size: 15px;" *ngIf='!requerimento?.tiroDesp'>( ) Tiro Desportivo</th>
+                <th style=";font-size: 15px;" *ngIf='!requerimento?.caca'>( ) Caça</th>
+                <th style=";font-size: 15px;" *ngIf='!requerimento?.entDesp'>( ) Entidade de tiro Desportivo</th>
+                <th style=";font-size: 15px;" *ngIf='!requerimento?.aquicaoAcessorio'>( ) Aquisição de acessório de arma de fogo para tiro desportivo/entidade
+                de tiro desportivo/caça </th>
+            </tr>
+          
+            </tbody>
+        </table>
+
+        <th style="border:0" style="padding-left: 112px;padding-top: 2%; font-size: 20px;">3. ARMA DE FOGO/ACESSÓRIO</th>
+        <table width="75%" style="margin-left: 10%;margin-top: 0%; border=0">
+            <tbody>
+            <tr>
+                <th style=";font-size: 15px;" >Tipo: <b>{{requerimento?.tipo}}</b></th>
+                <th style=";font-size: 15px;" >Calibre: <b>{{requerimento?.calibre}}</b></th>
+                <th style=";font-size: 15px;" >Marca/Modelo: <b>{{requerimento?.marca}}/{{requerimento?.modelo}}</b></th>
+                <th style=";font-size: 15px;" >Quantidade: <b>{{requerimento?.quantidade}}</b></th>
+            </tr>
+          
+            </tbody>
+        </table>
+        <table width="75%" style="margin-left: 10%;margin-top: 0%; border=0">
+            <tbody>
+                
+            <tr>
+                <th style=";font-size: 15px;">Dados técnicos esclarecedores do acessório: {{requerimento?.dadosTec}} </th>
+            </tr>          
+                <td style=";font-size: 15px;">Fornecedor: <b>{{requerimento?.fornecedor}}  CNPJ: {{requerimento?.cnpj}}  CR: {{requerimento?.crForn}}</b> </td>
+            </tbody>
+        </table>
+
+        <div style="padding-left: 115px;padding-top:2%;width: 75%;">
+            <p><b>ANEXOS(*)</b></p>
+            <p>Declaro que tenho conhecimento das prescrições dos art. 9º ao 12. Da portaria __-COLOG/2019 quanto à aquisilçao de arma 
+                de fogo e que as informações ora prestadas são verdadeiras, sob pena de responsabilidade administrativa, civil e penal, conforme
+                art. 299 do Código Penal Brasileiro (falsidade ideológica).
+            </p>
+
+            <p style="text-align: right;"> GAMA-DF {{dataHoje |date:'dd/MM/yyyy'}}</p>
+
+            <p style="text-align: center;">________________________________________________</p>
+                <p style="text-align: center;">{{requerimento?.filiado?.pessoa?.nome | uppercase}}</p>
+
+                <p style="text-align: right;">DESPACHO DA OM DO SISFPC</p>
+                <p style="text-align: right;">
+                    (     ) Deferido – AUTORIZAÇÃO PARA AQUISIÇÃO  nº _______-SFPC/       , de ____/____/____ 
+                    
+                    (     ) Indeferido 
+                    ___________________________________________________________________________________________________________________________                                 
+                    
+                </p>
+                <p style="text-align: center;">   
+                    Nome completo e cargo </p>
+                    <p style="text-align: center;"> ____________________________</p>
+                <p style="text-align: center;"> Local e data</p>
+                
+     
+        </div>
+        <br/>
+    </div>
+</div>
+  <button class="red" mat-button (click)="gerarPdf()" ><i  class="fa fa-file-pdf" title="Gerar Requerimento"></i> Gerar PDF</button>
+
+     

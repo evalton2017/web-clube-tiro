@@ -1,0 +1,54 @@
+
+  .mat-form-field {
+    margin-top: 16px;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 60%;
+  }
+
+.example-margin{
+    padding-left: 3px;
+}
+
+.ddd{
+  margin-top: 2%;
+  margin-left: 0px;
+  width: 5%;
+}
+.numero{
+  margin-top: 2%;
+  margin-left: 0px;
+  width: 15%;
+}
+
+.add{
+  margin-top: 3.2%;
+  margin-left: 0px;
+  width: 5%;
+}
+
+.remov{
+  margin-top: 3.2%;
+  margin-left: 0px;
+  color: red;
+  width: 5%;
+
+}
+
+.ng-invalid.ng-touched:not(form){
+  border: 0px red;
+}
+
+.blue{
+  background-color: rgb(48, 48, 245);
+  margin-right: 2%;
+  color: white;
+}
+
+.amarelo{
+  background-color: rgb(160, 160, 68);
+  color: white;
+}

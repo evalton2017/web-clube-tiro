@@ -1,0 +1,56 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<div class="container">
+    <h1>Casdastro de Campeonato</h1>
+
+            <form [formGroup]="campeonatoForm">
+                <ng-template>Dados Pessoais</ng-template>
+                <mat-form-field class="example-form">
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="nome" placeholder="Nome do usuario" maxlength="150" >
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Temporada</mat-label>
+                    <input matInput formControlName="temporada" placeholder="temporada" maxlength="4" >
+                </mat-form-field>
+                        
+                 <mat-form-field class="example-full-width">
+                    <mat-label>Data Inicio</mat-label>
+                    <input matInput type="date" formControlName="inicio" required >
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Data Fim</mat-label>
+                    <input matInput type="date" formControlName="fim"  required (blur)="validarData()">
+                  </mat-form-field>
+    
+                <br>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Valor</mat-label>
+                  <input currencyMask  matInput type="valor" formControlName="valor"  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" >
+                </mat-form-field>
+                <br>
+
+                <mat-form-field appearance="fill">
+                  <mat-label> Escolha a Modalidade</mat-label>
+                  <mat-select fullWidth name="modalidade" formControlName="modalidade" placeholder="Modalidade">
+                    <mat-option *ngFor="let modalidade of modalidades" [value]="modalidade.id" (click)="listaDivisao(modalidade)">
+                      {{modalidade.descricao}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <h4>Divisões da Modalidade</h4>
+                <div *ngIf="divisoes.length>0" >
+                    <div *ngFor="let divisao of divisoes" style="display: inline;">
+                        {{divisao.descricao}} --
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <button class="blue" status="primary" mat-button [disabled]="campeonatoForm.invalid" (click)="salvar()">Salvar</button>
+                    <button class="amarelo" status="primary" mat-button (click)="onNoClick()" >Voltar</button>
+                </div>
+            </form>
+        
+</div>

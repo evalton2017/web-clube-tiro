@@ -1,0 +1,63 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<div class="text-center mb-4">
+    <img class="featurette-image img-fluid mx-auto" src="../../../assets/img/login.jpg" alt="" width="200" height="100">
+    <h1 class="h3 mb-3 font-weight-normal">CTM</h1>
+</div>
+
+<div class="container">
+    <h1>Cadastro de Usuario</h1>
+    <mat-horizontal-stepper linear #stepper>
+        <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Filiado ou Competidor?</ng-template>
+                <mat-radio-group aria-label="Select an option" formControlName="nome">
+                    <mat-radio-button value="Filiado">FILIADO</mat-radio-button><br>
+                    <mat-radio-button value="Competidor">COMPETIDOR</mat-radio-button>
+                </mat-radio-group>
+                <div>
+                    <button class="blue-icon" mat-button matStepperNext [disabled]="firstFormGroup.invalid">Avançar</button>
+                    <button class="blue-icon" mat-button [routerLink]="['/login']" >Retornar</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Dados pessoais</ng-template>
+     
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Nome</mat-label>
+                        <input matInput formControlName="nome" placeholder="Nome do usuario" minlength="8" required>
+                    </mat-form-field>
+    
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email" placeholder="Email do usuario" required>    
+                    </mat-form-field>
+    
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Senha</mat-label>
+                        <input type="password" matInput formControlName="password" placeholder="senha do usuario" required>
+                    </mat-form-field>
+
+                    <div>
+                        <button class="blue-icon"mat-button matStepperPrevious>Voltar</button>
+                        <button class="yellow-icon" mat-button matStepperNext [disabled]="secondFormGroup.invalid">Avancar</button>
+                    </div>
+                              
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>Dados do Cadastro.</p>
+            <mat-list>
+                <mat-list-item > Modalidade: {{firstFormGroup.value.nome}} </mat-list-item>
+                <mat-list-item> Nome: {{secondFormGroup.value.nome}} </mat-list-item>
+                <mat-list-item> Email: {{secondFormGroup.value.email}} </mat-list-item>
+            </mat-list>
+            <div>
+                <button class="blue-icon" mat-button (click)="cadastrar()">Cadastrar</button>
+                <button class="red-icon" mat-button (click)="stepper.reset()">Cancelar</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

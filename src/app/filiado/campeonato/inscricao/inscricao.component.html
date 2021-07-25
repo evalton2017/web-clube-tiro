@@ -1,0 +1,26 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<h2 mat-dialog-title>INSCRICÃO DE CAMPEONATO</h2>
+<div class="container">
+    <div style="background:#E8E8E8"> 
+
+                <ul>
+                    <li><img class="rounded-circle" src="{{dados.campeonato.url}}" alt="Generic placeholder image" width="140" height="140"></li>
+                    <li><h2>{{dados.campeonato.nome}}</h2></li>
+                    <li><p>Temporada {{dados.campeonato.temporada}}</p></li>
+                    <li><b>Valor R$ {{dados.campeonato.valor}}</b></li>
+                 </ul>
+           
+             <br>              
+              <p>Modalidade:{{dados.campeonato.modalidades[0].descricao}}</p>
+              <p>Divisões:</p>
+              <div *ngFor="let divisoes of dados.campeonato.modalidades[0].divisoes" >
+                    <p>{{divisoes.descricao}}</p>
+              </div>
+            </div>  
+  
+      <br>
+      <button class="btn btn btn-primary"  (click)="salvar()"  ><i class="fa fa-check-circle" aria-hidden="true"></i>
+        Confirmar Inscricao</button>
+
+ 
+</div>

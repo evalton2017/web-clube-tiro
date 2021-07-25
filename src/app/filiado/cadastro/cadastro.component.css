@@ -1,0 +1,49 @@
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 60%;
+  }
+
+.example-margin{
+    padding-left: 3px;
+}
+
+.ddd{
+  width: 5%;
+}
+@media only screen and (max-width: 600px) {
+  .ddd{
+    width: 50px;
+  }
+}
+.numero{
+
+  margin-left: 0px;
+  width: 15%;
+}
+
+.add{
+  margin-top: 2%;
+  margin-left: 0px;
+  width: 5%;
+}
+
+.remov{
+  margin-top: 3.2%;
+  margin-left: 0px;
+  color: red;
+  width: 5%;
+
+}
+
+.ng-invalid.ng-touched:not(form){
+  border: 0px red;
+}

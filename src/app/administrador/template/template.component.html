@@ -1,0 +1,52 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<mk-layout-wrapper >    
+    <mk-layout-header [isSidebarLeftToggle]="true" [isSidebarRightToggle]="false" [logoLink]="['/filiado']">
+        <mk-layout-header-logo>CTM-ADMIN</mk-layout-header-logo>
+        <button class="blue-icon" mat-button (click)="logout()">Sair <i class="fa fa-sign-out-alt"></i></button>
+      </mk-layout-header>
+
+    <mk-layout-sidebar-left >
+        <div class="text-center mb-4 img ">
+            <img class="img-fluid mx-auto img-c" src="../../../assets/img/login.jpg" alt="" width="100" height="90">
+            <p class="user">{{email}}</p>
+        </div>
+        <ul class="sidebar-menu" data-widget="tree" *ngIf="menus">
+          <li class="header">MENU</li>
+  
+          <ng-container *ngFor="let menu of menus; let i=index">
+              <li *ngIf="menu.children; else itemMenu" class="{{menu.action}}" (click)="abrirSubMenu(i)">
+                  <a ><i class="{{menu.iconClasses}}"></i> <span> {{menu.label}}</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                  </a>
+                  <ul *ngFor="let submenu of menu.children" class="treeview-menu">
+                    <li class="treeview"><a [routerLink]="[submenu.route]"> <i class="{{ submenu.iconClasses }}"></i>{{submenu.label}}</a></li>
+                  </ul>
+              </li>
+              <ng-template #itemMenu>
+                <li class="{{active_menu}}">
+                  <a [routerLink]="[menu.route]">
+                      <i class="{{ menu.iconClasses }}"></i><span>{{ menu.label }}</span>                               
+                  </a>
+                </li>   
+              </ng-template>
+          </ng-container>
+   </ul>
+ 
+    </mk-layout-sidebar-left>
+    
+    <mk-layout-content>
+      <router-outlet></router-outlet>
+    </mk-layout-content>
+
+    <mk-layout-footer>
+      <mk-layout-footer-left>
+        Duke Tecnology
+      </mk-layout-footer-left>
+      <mk-layout-footer-right>
+        Clube CTM
+      </mk-layout-footer-right>
+    </mk-layout-footer>
+
+  </mk-layout-wrapper>

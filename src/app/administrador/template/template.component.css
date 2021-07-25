@@ -1,0 +1,21 @@
+.blue-icon {
+    color: white;
+    background-color: rgb(41, 178, 241);
+    position: absolute;
+    right: 20px;
+    top: 15px;
+
+}
+
+.user{
+    color: white;
+    padding-top: 1%;
+}
+
+.img{
+    margin-top: 5%;
+}
+
+.img-c{
+    border-radius: 50%;
+}

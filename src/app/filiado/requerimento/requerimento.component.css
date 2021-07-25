@@ -1,0 +1,25 @@
+.example-margin{
+    padding-right: 1%;
+}
+
+.mat-form-field {
+margin-top: 16px;
+}
+
+.example-form {
+min-width: 150px;
+max-width: 500px;
+width: 60%;
+}
+
+.pading{
+    padding-right: 15%;
+}
+.cr{
+    padding-right: 3%;
+}
+
+.blue{
+    background-color: rgb(110, 110, 170);
+    color:white;
+}

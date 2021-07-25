@@ -1,0 +1,47 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<div class="container">
+    <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"></div>        
+                    <div class="card-body">
+                        <form [formGroup]="form">
+                
+                            <div class="text-center mb-4">
+                                    <img class="featurette-image img-fluid mx-auto" src="../../../assets/img/login.jpg" alt="" width="150" height="70" >      
+                                  <h1 class="h3 mb-3 font-weight-normal">CTM</h1>   
+                                </div>
+
+                                <div class="form-label-group">
+                                  <input type="text" id="email" class="form-control" name="email" formControlName="email" placeholder="Digite o usuario" autofocus>
+                                 
+                                </div>
+                                <br>
+                                <div class="form-label-group">
+                                  <input type="password" id="password" name="password" class="form-control"   formControlName="password" placeholder="Digite a Senha" >
+                            
+                                </div>
+                      
+                                <br>
+                                <button class="btn btn btn-primary btn-block"  type="submit" nbButton status="primary" (click)="onSubmit()" [disabled]="form.invalid" >
+                                  <i class="fa fa-user" aria-hidden="true"></i>Entrar</button>
+                                <button class="btn btn btn-warning btn-block"  type="submit" nbButton status="btn-warning" routerLink="cadastro">
+                                  <i class="fa fa-user-plus" aria-hidden="true"></i>Cadastrar</button>
+                                <a class="btn btn btn-danger btn-block" (click)="esqueciSenha()">
+                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                Esqueci a Senha</a>
+
+                                <button class="btn btn btn-warning btn-block"  type="submit" nbButton status="btn-warning" (click)="loginGoogle()">
+                                  <i class="fa fa-user-plus" aria-hidden="true"></i>Acessar com Google</button>
+                                <br/>
+                            
+                        </form>
+                                  
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>
+
+   

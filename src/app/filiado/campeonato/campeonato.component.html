@@ -1,0 +1,20 @@
+<ngx-loading [show]="loading"></ngx-loading>
+<div>
+    <h4 class="text-white bg-dark text-center">CAMPEONATOS CLUBE DA MATA</h4>
+
+    <div style="background:#E8E8E8"> 
+      <div class="row"  >
+          <div class="col-md-4 img" *ngFor="let campeonato of campeonatos; let i=index" >
+            <img class="rounded-circle" src="{{campeonato.url}}" alt="Generic placeholder image" width="140" height="140">
+            <h2>{{campeonato.nome}}</h2>
+            <p>Temporada {{campeonato.temporada}}</p>
+            <p>Valor R$ {{campeonato.valor}}</p>
+  
+            <button *ngIf="!campeonato.inscricao" class="btn btn btn-primary btn-block"  status="primary" (click)="inscricaoCampeonato(campeonato)"  ><i class="fa fa-user" aria-hidden="true"></i>Inscrever</button>
+            <button *ngIf="campeonato.inscricao" class="btn btn btn-success btn-block"  ><i class="fa fa-check-circle" aria-hidden="true"></i>Inscrição Realizada</button>
+          </div>  
+        </div>
+    </div>
+
+  </div>
+  <br>

@@ -1,0 +1,28 @@
+.id{
+    flex: 0 0 10%;
+ }
+
+ .opcoes{
+    flex: 0 0 15%;
+    text-align: left;
+ }
+
+ .ativo{
+    flex: 0 0 15%;
+ }
+
+ .cpf{
+    flex: 0 0 15%;
+ }
+
+table {
+    width: 100%;
+}
+
+
+.example-form {
+   min-width: 150px;
+   max-width: 500px;
+   width: 60%;
+ }
+ 

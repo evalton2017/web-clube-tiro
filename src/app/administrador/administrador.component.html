@@ -1,0 +1,119 @@
+    <section class="content container-fluid">
+        <div class="row">
+
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h4>CAMPEONATOS</h4>
+                  <p>Campeonatos</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="#" class="small-box-footer" [routerLink]="['/admin/campeonatos']" >Acesse a área de campeonato <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- 
+
+            <div class="col-lg-3 col-xs-6">
+      
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h4>ACERVO<sup style="font-size: 20px"></sup></h4>
+                  <p>Acesse os acervos dos filiados</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>./col -->
+
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h4>FILIADOS</h4>
+                  <p>Lista Filiados </p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person"></i>
+                </div>
+                <a [routerLink]="['/admin/filiados']" class="small-box-footer">Acessar Informações <i class="fa fa-users"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-blue">
+                  <div class="inner">
+                    <h4>Competidores</h4>
+                    <p>lista Competidores </p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-person"></i>
+                  </div>
+                  <a [routerLink]="['/admin/competidores']" class="small-box-footer">Acessar Informações <i class="fa fa-users"></i></a>
+                </div>
+              </div>
+
+            <!-- 
+            <div class="col-lg-3 col-xs-6">
+              <div class="small-box bg-red">
+                <div class="inner">
+                  <h4>RELATORIOS</h4>
+                  <p>Acompanhe seus pedidos</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="{{ route('admin.relatorios') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>./col -->
+        </div>
+            <div class="row">
+              
+              <div class="col-md-6">
+                    <!-- Info Boxes Style 2 -->
+                    <div class="info-box bg-yellow">
+                      <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+          
+                      <div class="info-box-content">
+                        <span class="info-box-text">Quantidade</span>
+                        <span class="info-box-number">Filiados </span>
+          
+                        <div class="progress">
+                        <div class="progress-bar" >{{quantidade_filiado}}</div>
+                        </div>
+                        <span class="progress-description">
+                          {{quantidade_filiado}}
+                            </span>
+                      </div>
+                      <!-- /.info-box-content -->
+                    </div>
+                                     
+              </div>
+
+              <div class="col-md-6">
+                <!-- Info Boxes Style 2 -->
+                <div class="info-box bg-blue">
+                  <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+      
+                  <div class="info-box-content">
+                    <span class="info-box-text">Quantidade</span>
+                    <span class="info-box-number">Competidores </span>
+      
+                    <div class="progress">
+                      <div class="progress-bar" >{{quantidade_competidor}}</div>
+                    </div>
+                    <span class="progress-description">
+                          {{quantidade_competidor}}
+                        </span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                                 
+          </div>
+        </div>          
+ </section>
